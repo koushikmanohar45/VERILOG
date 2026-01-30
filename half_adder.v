@@ -1,5 +1,5 @@
 module half_adder(input a,b, output s,c);
-  assign sum= a^b;
-  assign carry= a&b;
+  assign s= a^b;
+  assign c= a&b;
 endmodule  
   
