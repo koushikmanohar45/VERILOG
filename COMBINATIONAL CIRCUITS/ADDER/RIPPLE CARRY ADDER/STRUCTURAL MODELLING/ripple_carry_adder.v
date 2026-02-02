@@ -1,3 +1,7 @@
+module full_adder (input a, b ,cin, output sum, carry );
+  assign sum= a^b^cin;
+  assign carry=(cin&(a^b))|a&b;
+endmodule 
 module ripple_carry_adder(input [3:0]a,
                           input[3:0]b,
                           input cin,
