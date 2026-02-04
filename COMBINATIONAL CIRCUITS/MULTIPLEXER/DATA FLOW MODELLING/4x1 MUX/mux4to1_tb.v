@@ -4,7 +4,7 @@ module mux4to1_tb();
   mux4to1 dut(.i0(I0),.i1(I1),.i2(I2),.i3(I3),.s1(s1),.s0(s0),.en(en),.y(y));
   initial begin 
     I0=1; I1=0;I2=0; I3=1; s1=0;s0=0;en=0;
-    $monitor("Time=%0t || I0=%b I1=%b I2=%b I3=%b || S1=%b S0=%b || Y=%b",$time,I0,I1,I2,I3,s1,s0,y);
+    $monitor("Time=%0t || I0=%b I1=%b I2=%b I3=%b ||en=%b S1=%b S0=%b || Y=%b",$time,I0,I1,I2,I3,en,s1,s0,y);
     #10 s1=0;s0=1;
     #10 s1=0;s0=0;en=0;
     #10 s1=0;s0=1;
