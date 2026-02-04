@@ -1,3 +1,5 @@
-module mux8to1(input i0,i1,i2,i3,i4,i5,i6,i7,s0,s1,s2,output y);
-  assign y=s2?(s1?(s0?i7:i6):(s0?i5:i4)):(s1?(s0?i3:i2):(s0?i1:i0));
+module mux8to1(input i0,i1,i2,i3,i4,i5,i6,i7,s0,s1,s2,en,output y);
+  wire y1;
+  assign y1=s2?(s1?(s0?i7:i6):(s0?i5:i4)):(s1?(s0?i3:i2):(s0?i1:i0));
+  assign y= en&y1;
 endmodule 
