@@ -7,9 +7,6 @@ module mux16x1_tb();
 mux16x1 dut(.i(i),.s(s),.en(en),.y(y));
     integer k;
     initial begin
-      $monitor("en=%b s[3]=%b s[2]=%b s[1]=%b s[0]=%b || I=%b || y=%b",en, s[3],s[2],s[1],s[0],i, y);
-    end
-    initial begin
         en=1;
         i=16'b0000000011111111;
         for (k =0;k<16;k=k+1) begin
