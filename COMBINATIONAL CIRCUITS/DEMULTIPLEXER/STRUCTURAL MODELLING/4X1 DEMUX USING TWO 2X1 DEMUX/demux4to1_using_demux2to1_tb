@@ -1,0 +1,27 @@
+module demux4to1_using_demux2to1_tb();
+ reg y,s0,s1;
+ wire i0,i1,i2,i3;
+  demux4to1_using_demux2to1 dut(.i0(i0),.i1(i1),.i2(i2),.i3(i3),.s1(s1),.s0(s0),.y(y));
+  initial begin 
+    integer k;
+    y=1;
+    for (k=0;k<4;k=k+1) begin
+      {s1,s0}=k;
+      #1;
+      $display("TIME=%0t  || Y=%B  || S1=%B S0=%B   || IO=%B I1=%B I2=%B I3=%B",$time,y,s1,s0,i0,i1,i2,i3);
+      #10;
+    end
+    y=0;
+    for (k=0;k<4;k=k+1) begin
+      #1
+      {s1,s0}=k;
+      $display("TIME=%0t  || Y=%B  || S1=%B S0=%B   || IO=%B I1=%B I2=%B I3=%B",$time,y,s1,s0,i0,i1,i2,i3);
+      #10;
+    end   
+     
+  end
+  initial begin
+    $dumpfile("demux4to1_using_demux2to1.vcd");
+    $dumpvars(0,demux4to1_using_demux2to1_tb);
+  end
+endmodule
