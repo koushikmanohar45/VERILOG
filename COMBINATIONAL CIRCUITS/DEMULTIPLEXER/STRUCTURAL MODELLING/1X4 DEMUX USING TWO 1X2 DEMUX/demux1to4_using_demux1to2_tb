@@ -1,7 +1,7 @@
-module demux4to1_using_demux2to1_tb();
+module demux1to4_using_demux1to2_tb();
  reg y,s0,s1;
  wire i0,i1,i2,i3;
-  demux4to1_using_demux2to1 dut(.i0(i0),.i1(i1),.i2(i2),.i3(i3),.s1(s1),.s0(s0),.y(y));
+  demux1to4_using_demux1to2 dut(.i0(i0),.i1(i1),.i2(i2),.i3(i3),.s1(s1),.s0(s0),.y(y));
   initial begin 
     integer k;
     y=1;
@@ -21,7 +21,7 @@ module demux4to1_using_demux2to1_tb();
      
   end
   initial begin
-    $dumpfile("demux4to1_using_demux2to1.vcd");
-    $dumpvars(0,demux4to1_using_demux2to1_tb);
+    $dumpfile("demux1to4_using_demux1to2.vcd");
+    $dumpvars(0,demux1to4_using_demux1to2_tb);
   end
 endmodule
