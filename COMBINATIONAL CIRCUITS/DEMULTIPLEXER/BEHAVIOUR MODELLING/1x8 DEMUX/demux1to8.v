@@ -1,5 +1,6 @@
 module demux1to8(input y,en,input [2:0]s,output reg [7:0]I);
   always@(*) begin
+    I=8'b00000000;
     if(en) begin  
     if(s[2]) begin
       if(s[1]) begin
