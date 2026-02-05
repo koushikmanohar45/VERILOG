@@ -1,7 +1,7 @@
-module demux2to1_tb();
+module demux1to2_tb();
  reg y,s;
  wire i0,i1;
- demux2to1 dut(.i0(i0),.i1(i1),.s(s),.y(y));
+ demux1to2 dut(.i0(i0),.i1(i1),.s(s),.y(y));
   initial begin 
     y=1;s=0;
     $monitor("TIME=%0t  || Y=%B  || S=%B   || IO=%B I1=%B ",$time,y,s,i0,i1);
@@ -11,7 +11,7 @@ module demux2to1_tb();
     #10 $finish;
   end
   initial begin
-    $dumpfile("demux2to1.vcd");
-    $dumpvars(0,demux2to11_tb);
+   $dumpfile("demux1to2.vcd");
+   $dumpvars(0,demux1to2_tb);
   end
 endmodule
