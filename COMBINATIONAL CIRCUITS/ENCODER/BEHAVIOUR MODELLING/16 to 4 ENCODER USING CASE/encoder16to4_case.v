@@ -15,7 +15,7 @@ module encoder16to4_case(input [15:0]D,output reg [3:0] y);
       16'd2048:y=4'b1011;
       16'd4096:y=4'b1100;
       16'd8192:y=4'b1101;
-      6'd16384:y=4'b1110;
+      16'd16384:y=4'b1110;
       16'd32768:y=4'b1111;
       default:y=4'bxxxx;
     endcase
