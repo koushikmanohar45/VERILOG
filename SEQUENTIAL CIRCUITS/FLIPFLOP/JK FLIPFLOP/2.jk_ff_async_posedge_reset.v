@@ -1,5 +1,5 @@
 module jk_ff (input j,k,clk,rst,output reg q);
-  always @(posedge clk or poseedge rst) begin
+  always @(posedge clk or posedge rst) begin
     if (rst)
         q <= 1'b0;
     else begin
