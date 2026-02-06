@@ -1,4 +1,4 @@
-odule dff_tb;
+module dff_tb;
     reg d,clk,rst;
     wire q;
     dff dut (.d(d),.clk(clk),.rst(rst),.q(q));
