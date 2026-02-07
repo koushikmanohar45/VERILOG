@@ -1,11 +1,11 @@
 module t_latch (input  t, clk,output reg q);
-initial q = 1'b0;   // initialization for simulation
+initial q = 1'b0;   // initialization for simulation only 
 always @(*) begin
     if (clk) begin
         if (t)
-            q = ~q;   // toggle
+            q = ~q;   
         else
-            q = q;    // hold
+            q = q;    
     end
 end
 endmodule
