@@ -1,5 +1,5 @@
 module d_latch (input  d, clk,output reg q);
-always @(*) begin
+    always @(d or clk) begin
     if (clk) begin
         q <= d;
     end
