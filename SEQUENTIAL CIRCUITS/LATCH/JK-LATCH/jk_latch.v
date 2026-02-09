@@ -1,5 +1,5 @@
 module jk_latch (input  j, k, clk,output reg q);
-always @(*) begin
+    always @(j or k or clk or q) begin
     if (clk) begin
         if (~j & ~k)
             q = q;       
