@@ -1,4 +1,4 @@
-module sipo_dff#(parameter n=4)( input d,clk,rst,preset,output reg [n-1:0]q);
+module sipo_dff #(parameter n=4)( input d,clk,rst,preset,output reg [n-1:0]q);
   always @(posedge clk) begin
     if(rst)
       q<={n{1'b0}};
