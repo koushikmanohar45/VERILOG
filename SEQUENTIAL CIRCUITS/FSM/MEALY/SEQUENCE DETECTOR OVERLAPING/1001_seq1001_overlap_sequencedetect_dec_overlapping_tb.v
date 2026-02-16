@@ -1,0 +1,42 @@
+module fsm_1001_overlap_sequencedetect_melay_tb();
+  reg clk,rst,x;
+  wire y;
+  fsm_1001_overlap_sequencedetect_melay dut(.*);
+  always #5 clk=~clk;
+  initial begin
+    $dumpfile("fsm_1001_overlap_sequencedetect_melay.vcd");
+    $dumpvars(1,fsm_1001_overlap_sequencedetect_melay_tb);
+    $monitor("TIME=%0T || CLK=%B RST=%B X=%B||Y=%B || ",$time,clk,rst,x,y);
+    clk=1;rst=1;x=0;
+    #10 rst=0;x=1;
+    #10 x=0;
+    #10 x=1;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #30 rst=1;
+    #10 rst=0;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 x=0;
+    #10 x=0;
+    #10 x=1;
+    #10 $finish;
+  end
+endmodule 
