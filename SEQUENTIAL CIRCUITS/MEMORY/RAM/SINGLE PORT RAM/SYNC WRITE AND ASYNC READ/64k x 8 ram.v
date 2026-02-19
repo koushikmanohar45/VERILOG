@@ -2,7 +2,7 @@ module single_port_ram(
   input [7:0] data,
   input [15:0] addr,
   input w_e,clk,
-  output reg [7:0]q   
+  output  [7:0]q   
 );
   reg [7:0] mem[65535:0];
   reg [15:0] addr_reg;
