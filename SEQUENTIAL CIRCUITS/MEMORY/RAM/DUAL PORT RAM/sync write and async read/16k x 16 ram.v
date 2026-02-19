@@ -14,7 +14,7 @@ module dual_port_ram(
       addr_reg1<=addr1;
   end
   always @(posedge clk) begin
-    if(w_e2 && !(w_e1 && addr1==addr2)) begin  //PORT1 PRIORITY   
+    if(w_e2 && !(w_e1 && addr1==addr2)) begin  //PORT1 is given PRIORITY   
       mem[addr2]<=data2;
     end
     else
