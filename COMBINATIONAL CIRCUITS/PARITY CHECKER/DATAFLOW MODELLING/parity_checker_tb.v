@@ -1,0 +1,16 @@
+module parity_checker_tb;
+  reg[7:0]data;
+  reg parity_bit,mode;
+  wire error;
+  parity_checker dut(data,parity_bit,mode,error);
+  initial begin
+  $dumpfile("parity_checker.vcd");
+  $dumpvars(0,parity_checker_tb);
+  $monitor("time=%0t data=%b parity_bit=%b mode=%b error=%b",$time,data,parity_bit,mode,error);
+  data=8'b10101010;parity_bit=0;mode=0;#10;
+  data=8'b10101010;parity_bit=1;mode=0;#10;
+  data=8'b11110000;parity_bit=1;mode=1;#10;
+  data=8'b11110000;parity_bit=0;mode=1;#10;
+  $finish;
+  end
+ endmodule
