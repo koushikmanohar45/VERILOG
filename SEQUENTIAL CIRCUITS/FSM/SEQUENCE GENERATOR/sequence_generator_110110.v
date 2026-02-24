@@ -1,6 +1,6 @@
 module sequence_generator_110110(input clk,rst,output reg y);
   reg [2:0]state,nxt_state;
-  localparam s0=3'b000,s1=3'b001,s2=3'b010,s3=3'b011,s4=3'b100,s5=3'b101;
+  localparam [2:0]s0=3'b000,s1=3'b001,s2=3'b010,s3=3'b011,s4=3'b100,s5=3'b101;
   always @(posedge clk or posedge rst ) begin
     if(rst) 
       state<=s0;
