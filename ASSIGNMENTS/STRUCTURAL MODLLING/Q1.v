@@ -30,3 +30,27 @@ module magnitude_comparator_2bit(
   and(W12,B[0],A[0],B[1],A[1]);
   or(equal,W9,W10,W11,W12);
 endmodule
+
+
+
+//testbench
+module magnitude_comparator_2bit_tb();
+  reg [1:0] A,B;
+  reg A_greater,A_lesser,equal;
+  integer i;
+  magnitude_comparator_2bit dut(.*);
+  initial begin
+    A=2'B01;B=2'B10;
+  end
+  always@(A or B) begin
+    for(i=0;i<16;i++) begin
+      {A,B}=i;
+      #10;
+    end
+  end
+  initial begin
+    $dumpfile("magnitude_comparator_2bit.vcd");
+    $dumpvars(1,magnitude_comparator_2bit_tb);
+    $monitor("time=%0t A=%b  B=%b A_GREATER=%b  A_LESSER=%b  EQUAL=%b",$time,A,B,A_greater,A_lesser,equal);
+  end
+endmodule
