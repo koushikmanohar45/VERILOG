@@ -56,8 +56,8 @@ module arithmetic_unit_tb();
   initial begin
     $dumpfile("arithmetic_unit.vcd");
     $dumpvars(0,arithmetic_unit_tb);
-    $display("          clk  rst  data1     data2         sel     output");
-    $monitor("TIME=%0T ||  %B   %B   %B         %B         %B     || %b  ",$time,data1,data2,sel_in,out);
+    $display("            data1     data2         sel     output");
+    $monitor("TIME=%0T ||    %B         %B         %B     || %b  ",$time,data1,data2,sel_in,out);
     data1=4'b0111;data2=4'b0110;sel_in=3'b000;
     for(i=0;i<8;i++) begin
       #10
