@@ -6,7 +6,7 @@ module fibonacci_series
   integer i;
   always@(*) begin
     
-    for (i=2;i<N;i++) begin
+    for (i=2;i<N;i++) begin //clearing all location to avoid invalid condition
       out[i]=0;
     end
     
