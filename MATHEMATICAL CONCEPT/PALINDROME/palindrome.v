@@ -4,11 +4,9 @@ module palindrome
   output reg out
 );
   integer temp,reverse,digit;
-
   always @(*) begin
     temp=n;
     reverse=0;
-
     while (temp!=0) begin
       digit=temp%10;
       temp=temp/10;
@@ -20,5 +18,4 @@ module palindrome
     else
       out=0;
   end
-
 endmodule
