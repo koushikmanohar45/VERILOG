@@ -11,9 +11,9 @@ module clk_divider(
     else begin
       count=count+1;
       if(count==2'b01) 
-        f_by_4<=~f_by_4;
+        f_by_4<=1'b0;
       else if(count==2'b11) begin
-        f_by_4<=~f_by_4;
+        f_by_4<=1'b1;
         count<=2'b00;
        end
       else
