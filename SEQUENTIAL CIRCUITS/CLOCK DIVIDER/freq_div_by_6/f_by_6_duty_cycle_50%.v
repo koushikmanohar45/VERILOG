@@ -10,7 +10,7 @@ module clk_divider(
     end
     else begin
       count<=count+1;
-      if(count==2'b00) begin
+      if(count==2'b10) begin
         f_by_6<=~f_by_6;
         count<=2'b00;
         end
