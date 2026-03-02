@@ -1,9 +1,11 @@
+// ON for 4.5 clk cycle
+// OFF for 1.5 clk cycle
 module clk_divider(
   input clk,rst,
   output reg f_by_6
 );
   reg[2:0] count;
-  always @(posedge clk) begin
+  always @(posedge clk) begin 
     if(rst) begin
       count<=3'b000;
       f_by_6<=1'b0;
