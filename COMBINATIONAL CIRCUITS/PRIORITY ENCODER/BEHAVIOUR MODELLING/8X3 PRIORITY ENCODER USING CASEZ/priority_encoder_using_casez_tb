@@ -1,0 +1,16 @@
+module priority_encoder_tb;
+  reg [7:0]X;
+  wire[2:0] y;
+  integer i;
+  priority_encoder dut (.*);
+   initial begin
+     $monitor("time=%0t X=%b   Y=%0t",$time,X,y);
+     X=8'B00000101;
+     #2
+     repeat(30) begin
+       #2
+       X=X+8'd5;
+     end
+     #20 $finish;
+   end
+endmodule
