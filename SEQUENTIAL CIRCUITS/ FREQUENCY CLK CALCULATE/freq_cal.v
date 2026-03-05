@@ -26,5 +26,9 @@ module freq_cal();
       t_freq=1.0/((t3-t2)*1e-9);
     $display("t_frequency=%0f",t_freq);
   end
-  
+  initial begin
+    $dumpfile("freq_cal.vcd");
+    $dumpvars(1,freq_cal);
+    #100  $finish;
+  end
 endmodule
