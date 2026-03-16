@@ -34,6 +34,6 @@ module sync_fifo(
       end
    end
 
-  assign empty=(wptr==rptr)?1'b1:1'b0;
-  assign full=(rptr==(wptr+1'b1))?1'b1:1'b0;
+  assign empty=(wptr==rptr);
+  assign full=(rptr==(wptr+1'b1));
 endmodule
